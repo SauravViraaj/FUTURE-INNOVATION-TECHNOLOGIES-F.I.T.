@@ -270,8 +270,8 @@ main { background:linear-gradient(180deg,#f1f6ff 0%,#ffffff 22%,#edf5ff 52%,#fff
 .fit-brief-list p{font-size:12px;line-height:1.8;color:#62718b;margin:5px 0 0}
 .fit-learning-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
 .fit-learning-card{min-width:0}
-.fit-learning-visual{height:150px;position:relative;overflow:hidden;border-radius:17px;display:flex;flex-direction:column;justify-content:space-between;padding:17px;color:#fff}
-.fit-learning-visual:after{content:"";position:absolute;width:120px;height:120px;right:-35px;bottom:-50px;border:1px solid #ffffff55;border-radius:50%;box-shadow:0 0 0 18px #ffffff0d,0 0 0 36px #ffffff08}
+.fit-learning-visual{height:auto;aspect-ratio:16/9;position:relative;overflow:hidden;border-radius:17px;padding:0;color:#fff;background:#071a40;isolation:isolate}.fit-learning-visual img{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.fit-learning-visual:after{content:"";display:none;position:absolute;width:120px;height:120px;right:-35px;bottom:-50px;border:1px solid #ffffff55;border-radius:50%;box-shadow:0 0 0 18px #ffffff0d,0 0 0 36px #ffffff08}
 .fit-learning-visual span{font-size:10px;letter-spacing:2px;font-weight:900;opacity:.85}
 .fit-learning-visual b{font-size:19px;z-index:1}
 .fit-learning-visual i{position:absolute;right:17px;top:37px;font-size:44px;font-style:normal;color:#ffffffc9}
@@ -355,10 +355,10 @@ main { background:linear-gradient(180deg,#f1f6ff 0%,#ffffff 22%,#edf5ff 52%,#fff
       <p>For schools, colleges, training organisations and innovation spaces, hands-on learning can help learners explore concepts by building and testing projects.</p>
     </div>
     <div class="fit-learning-grid">
-      <article class="fit-learning-card"><div class="fit-learning-visual fit-learning-blue"><span>01</span><b>Explore</b><i>⌁</i></div><h3>Discover the fundamentals</h3><p>Introduce concepts in engineering, coding, electronics, flight principles and design thinking with appropriate activities.</p></article>
-      <article class="fit-learning-card"><div class="fit-learning-visual fit-learning-cyan"><span>02</span><b>Experiment</b><i>⌘</i></div><h3>Learn by doing</h3><p>Use guided exercises, sensors, robotics kits and supervised experiments to test ideas and understand cause and effect.</p></article>
-      <article class="fit-learning-card"><div class="fit-learning-visual fit-learning-violet"><span>03</span><b>Create</b><i>⬡</i></div><h3>Build a project</h3><p>Turn a question into a prototype, document decisions and improve the result through structured feedback.</p></article>
-      <article class="fit-learning-card"><div class="fit-learning-visual fit-learning-gold"><span>04</span><b>Present</b><i>↗</i></div><h3>Share the learning</h3><p>Encourage learners to explain the problem, demonstrate their approach and reflect on what they would change next.</p></article>
+      <article class="fit-learning-card"><div class="fit-learning-visual fit-learning-blue"><img src="./Drone%20Mapping%20Explorer%20Banner.png" alt="Explore: drone mapping and aerial survey technology" width="800" height="450" loading="lazy" decoding="async"></div><h3>Discover the fundamentals</h3><p>Introduce concepts in engineering, coding, electronics, flight principles and design thinking with appropriate activities.</p></article>
+      <article class="fit-learning-card"><div class="fit-learning-visual fit-learning-cyan"><img src="./Experimenting%20with%20Robotics.png" alt="Experiment: hands-on robotics and electronics workshop" width="800" height="450" loading="lazy" decoding="async"></div><h3>Learn by doing</h3><p>Use guided exercises, sensors, robotics kits and supervised experiments to test ideas and understand cause and effect.</p></article>
+      <article class="fit-learning-card"><div class="fit-learning-visual fit-learning-violet"><img src="./Create_Drone%20Prototyping%20Lab.png" alt="Create: drone prototyping and engineering design" width="800" height="450" loading="lazy" decoding="async"></div><h3>Build a project</h3><p>Turn a question into a prototype, document decisions and improve the result through structured feedback.</p></article>
+      <article class="fit-learning-card"><div class="fit-learning-visual fit-learning-gold"><img src="./Drone%20Innovation%20Presentation.png" alt="Present: demonstrating a drone innovation project" width="800" height="450" loading="lazy" decoding="async"></div><h3>Share the learning</h3><p>Encourage learners to explain the problem, demonstrate their approach and reflect on what they would change next.</p></article>
     </div>
     <div class="fit-learning-note"><b>Designed around the institution:</b> age group, curriculum, lab facilities, educator experience, safety measures and learning outcomes should inform the final plan.</div>
     <a class="btn" href="#contact">Discuss an Education Programme ↗</a>
