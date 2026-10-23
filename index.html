@@ -519,30 +519,30 @@ main { background:linear-gradient(180deg,#f1f6ff 0%,#ffffff 22%,#edf5ff 52%,#fff
     animation: fit-orbit-word-glow 3.4s ease-in-out infinite;
   }
   .fit-orbit i {
+    position: absolute;
     z-index: 3;
     top: 50%;
     left: 50%;
     right: auto;
     bottom: auto;
-    transform: translate(-50%, -50%);
-    animation: fit-orbit-satellite 5.5s linear infinite;
+    margin: -3.5px 0 0 -3.5px;
+    transform-origin: 3.5px 3.5px;
+    animation: fit-orbit-satellite 6s linear infinite;
   }
   .fit-orbit i:nth-of-type(1) {
-    --orbit-radius-x: 66px;
-    --orbit-radius-y: 66px;
-    animation-duration: 4.8s;
+    --orbit-radius: 52px;
+    animation-duration: 7s;
+    animation-delay: -1.2s;
   }
   .fit-orbit i:nth-of-type(2) {
-    --orbit-radius-x: 63px;
-    --orbit-radius-y: 45px;
-    animation-duration: 6.4s;
-    animation-delay: -2s;
+    --orbit-radius: 44px;
+    animation-duration: 9s;
+    animation-delay: -4s;
   }
   .fit-orbit i:nth-of-type(3) {
-    --orbit-radius-x: 48px;
-    --orbit-radius-y: 62px;
-    animation-duration: 5.6s;
-    animation-delay: -3.4s;
+    --orbit-radius: 34px;
+    animation-duration: 8s;
+    animation-delay: -2.7s;
   }
   .fit-delivery-intro:hover .fit-orbit {
     box-shadow: 0 0 38px #087cf025, inset 0 0 32px #29d7ff12;
@@ -557,11 +557,9 @@ main { background:linear-gradient(180deg,#f1f6ff 0%,#ffffff 22%,#edf5ff 52%,#fff
     100% { transform: rotate(360deg) scaleX(.55); }
   }
   @keyframes fit-orbit-satellite {
-    0% { transform: translate(-50%, -50%) rotate(0deg) translateX(var(--orbit-radius-x)) scale(.9); }
-    25% { transform: translate(-50%, -50%) rotate(90deg) translateX(var(--orbit-radius-y)) scale(1.15); }
-    50% { transform: translate(-50%, -50%) rotate(180deg) translateX(var(--orbit-radius-x)) scale(.85); }
-    75% { transform: translate(-50%, -50%) rotate(270deg) translateX(var(--orbit-radius-y)) scale(1.1); }
-    100% { transform: translate(-50%, -50%) rotate(360deg) translateX(var(--orbit-radius-x)) scale(.9); }
+    from { transform: rotate(0deg) translateX(var(--orbit-radius)) rotate(0deg) scale(.95); }
+    50% { transform: rotate(180deg) translateX(var(--orbit-radius)) rotate(-180deg) scale(1.12); }
+    to { transform: rotate(360deg) translateX(var(--orbit-radius)) rotate(-360deg) scale(.95); }
   }
   @keyframes fit-orbit-word-glow {
     0%, 100% { text-shadow: 0 0 12px #29d7ff55; }
@@ -572,6 +570,17 @@ main { background:linear-gradient(180deg,#f1f6ff 0%,#ffffff 22%,#edf5ff 52%,#fff
   .fit-orbit, .fit-orbit::before, .fit-orbit::after, .fit-orbit span, .fit-orbit i {
     animation: none !important;
   }
+}
+
+
+/* Keep orbital satellites safely inside the logo circle at every viewport size */
+.fit-orbit { overflow: hidden; contain: layout paint; }
+.fit-orbit i { pointer-events: none; }
+@media (max-width: 560px) {
+  .fit-orbit { width: min(150px, 54vw); height: min(150px, 54vw); }
+  .fit-orbit i:nth-of-type(1) { --orbit-radius: 34%; }
+  .fit-orbit i:nth-of-type(2) { --orbit-radius: 29%; }
+  .fit-orbit i:nth-of-type(3) { --orbit-radius: 23%; }
 }
 
 /* Mobile usability and layout polish */
