@@ -492,15 +492,67 @@ main { background:linear-gradient(180deg,#f1f6ff 0%,#ffffff 22%,#edf5ff 52%,#fff
 }
 
 
+
+/* Mobile usability and layout polish */
+html { -webkit-text-size-adjust: 100%; }
+body { overflow-wrap: break-word; }
+img, video, svg, canvas { max-width: 100%; }
+button, input, select, textarea { font: inherit; }
+button, a, select, summary { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 3px solid #29d7ff; outline-offset: 3px; }
+@media (max-width: 950px) {
+  .navin { position: relative; }
+  .menu { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; flex: 0 0 44px; border: 1px solid #d5e5f8; border-radius: 12px; background: #fff; color: #061735; font-size: 23px; cursor: pointer; }
+  .links { max-height: min(72vh, 520px); overflow-y: auto; overscroll-behavior: contain; box-shadow: 0 18px 28px #06173514; }
+  .links a { display: flex; align-items: center; min-height: 44px; width: 100%; }
+  .links.open { display: flex; }
+  .navin > .btn { display: none; }
+  .hero, .section { scroll-margin-top: 84px; }
+  .fit-learning-grid, .fit-blog-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .education { gap: 20px; }
+  .contactgrid { gap: 18px; }
+}
+@media (max-width: 560px) {
+  .wrap { width: min(100% - 32px, 1180px); }
+  .top { font-size: 10px; line-height: 1.5; }
+  .navin { height: auto; min-height: 68px; gap: 10px; }
+  .brand { min-width: 0; flex: 1; font-size: 12px; }
+  .brand img { width: 42px; height: 42px; flex: 0 0 42px; }
+  .brand small { letter-spacing: 1px; }
+  .links { top: 100%; left: -1px; right: -1px; padding: 10px 16px; border-radius: 0 0 14px 14px; }
+  .hero h1 { font-size: clamp(34px, 10vw, 43px); line-height: 1.08; }
+  .hero p { line-height: 1.7; }
+  .herobuttons { display: flex; flex-direction: column; align-items: stretch; gap: 10px; }
+  .herobuttons .btn { width: 100%; justify-content: center; min-height: 46px; }
+  .stripin, .cards, .products, .industries, .process, .fit-learning-grid, .fit-blog-grid, .formgrid, .footgrid { grid-template-columns: 1fr; }
+  .fit-learning-visual { aspect-ratio: 16 / 9; }
+  .education { padding: 20px; border-radius: 18px; }
+  .education h2 { font-size: clamp(26px, 8vw, 34px); }
+  .formbox, .contactpanel { padding: 20px; }
+  .field input, .field select, .field textarea { width: 100%; min-height: 46px; font-size: 16px; }
+  .field textarea { min-height: 120px; }
+  .formbox .btn, .formbox button, .contactpanel .btn { width: 100%; min-height: 48px; justify-content: center; }
+  .formgrid { gap: 14px; }
+  .float { right: 12px; bottom: 12px; }
+  .fit-blog-card { padding: 20px; }
+  .fit-blog-card h3 { font-size: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
+}
+
 </style>
 <footer class="footer"><div class="wrap"><div class="footgrid"><div><a class="brand" href="#home"><img src="logo.jpeg" alt="F.I.T. logo"><span>FUTURE INNOVATION<small>TECHNOLOGIES</small></span></a><p>Inspiring innovation. Building the future. Technology solutions across drones, robotics, digital fabrication and practical education.</p></div><div><h4>Explore</h4><a href="#about">About F.I.T.</a><a href="#drones">Drone Solutions</a><a href="#services">Capabilities</a><a href="#industries">Industries</a></div><div><h4>Education</h4><a href="#education">STEM Lab Setup</a><a href="#education">Robotics & AI</a><a href="#education">Teacher Training</a><a href="#contact">Institution Enquiry</a></div><div><h4>Connect</h4><a href="#contact">Request a Quote</a><a href="#contact">Project Consultation</a><a href="#faq">FAQs & Compliance</a><p>YOUR-EMAIL@example.com<br>+91-XXXXXXXXXX</p><p class="fit-social-title">Follow F.I.T.</p><nav class="fit-socials" aria-label="F.I.T. social media links"><a class="fit-social-link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook"><img src="./Facebook%20Icon.png" alt="" width="25" height="25" loading="lazy" decoding="async"></a><a class="fit-social-link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><img src="./Instagram%20Icon.png" alt="" width="25" height="25" loading="lazy" decoding="async"></a><a class="fit-social-link" href="https://wa.me/" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp"><img src="./WhatsApp%20icon.png" alt="" width="25" height="25" loading="lazy" decoding="async"></a><a class="fit-social-link" href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X" title="X"><img src="./X%20Icon.png" alt="" width="25" height="25" loading="lazy" decoding="async"></a></nav></div></div><div class="footbottom"><span>© <span id="year"></span> Future Innovation Technologies. All rights reserved.</span><span>Discover · Develop · Empower</span></div></div></footer><a class="float btn" href="#contact">Get a Quote ↗</a><script>/* Start the homepage at the top on a fresh load, even if the previous URL contained an old section hash. Internal navigation clicks still work normally. */
 (function(){
-  if (window.location.hash) {
+  /* Keep valid in-page links working; clear only unknown/stale hashes on the homepage. */
+  const validTargets = new Set(['#home','#about','#drones','#services','#industries','#education','#learning-pathways','#project-types','#contact']);
+  if (window.location.pathname.endsWith('/index.html') && window.location.hash && !validTargets.has(window.location.hash)) {
     window.history.replaceState(null, '', window.location.pathname + window.location.search);
     window.scrollTo(0, 0);
   }
 })();
-const menu=document.getElementById('menu'),nav=document.getElementById('navlinks');menu.addEventListener('click',()=>nav.classList.toggle('open'));nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));document.getElementById('year').textContent=new Date().getFullYear();document.querySelectorAll('[data-interest]').forEach(a=>a.addEventListener('click',()=>{const s=document.getElementById('interest');const o=[...s.options].find(x=>x.text===a.dataset.interest);if(o)s.value=o.value}));document.getElementById('enquiry').addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.target);const sub=encodeURIComponent('Project Enquiry | Future Innovation Technologies | '+f.get('interest'));const body=encodeURIComponent('Hello Future Innovation Technologies,\n\nI would like to enquire about a project.\n\nName: '+f.get('name')+'\nOrganisation: '+(f.get('org')||'Not specified')+'\nEmail: '+f.get('email')+'\nPhone: '+(f.get('phone')||'Not specified')+'\nInterest: '+f.get('interest')+'\nLocation: '+(f.get('location')||'Not specified')+'\nBudget: '+(f.get('budget')||'Not specified')+'\n\nProject details:\n'+f.get('details')+'\n\nPlease share next steps and a quotation.');document.getElementById('formmsg').textContent='Email draft is ready. Configure YOUR-EMAIL@example.com with the official company email before going live.';location.href='mailto:YOUR-EMAIL@example.com?subject='+sub+'&body='+body});
+const menu=document.getElementById('menu'),nav=document.getElementById('navlinks');menu.addEventListener('click',()=>nav.classList.toggle('open'));nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false')}));menu.setAttribute('aria-expanded','false');menu.addEventListener('click',()=>menu.setAttribute('aria-expanded',nav.classList.contains('open')?'true':'false'));document.addEventListener('keydown',e=>{if(e.key==='Escape'){nav.classList.remove('open');menu.setAttribute('aria-expanded','false')}});document.addEventListener('click',e=>{if(!e.target.closest('.navin')){nav.classList.remove('open');menu.setAttribute('aria-expanded','false')}});document.getElementById('year').textContent=new Date().getFullYear();document.querySelectorAll('[data-interest]').forEach(a=>a.addEventListener('click',()=>{const s=document.getElementById('interest');const o=[...s.options].find(x=>x.text===a.dataset.interest);if(o)s.value=o.value}));document.getElementById('enquiry').addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.target);const sub=encodeURIComponent('Project Enquiry | Future Innovation Technologies | '+f.get('interest'));const body=encodeURIComponent('Hello Future Innovation Technologies,\n\nI would like to enquire about a project.\n\nName: '+f.get('name')+'\nOrganisation: '+(f.get('org')||'Not specified')+'\nEmail: '+f.get('email')+'\nPhone: '+(f.get('phone')||'Not specified')+'\nInterest: '+f.get('interest')+'\nLocation: '+(f.get('location')||'Not specified')+'\nBudget: '+(f.get('budget')||'Not specified')+'\n\nProject details:\n'+f.get('details')+'\n\nPlease share next steps and a quotation.');document.getElementById('formmsg').textContent='Email draft is ready. Configure YOUR-EMAIL@example.com with the official company email before going live.';location.href='mailto:YOUR-EMAIL@example.com?subject='+sub+'&body='+body});
 /* Mobile tap feedback for primary CTA buttons; never blocks the link action */
 (function(){
   const buttons=document.querySelectorAll('.btn:not(.secondary)');
