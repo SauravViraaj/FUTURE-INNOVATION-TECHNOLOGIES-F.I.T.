@@ -475,6 +475,23 @@ main { background:linear-gradient(180deg,#f1f6ff 0%,#ffffff 22%,#edf5ff 52%,#fff
  .footer .footbottom{font-size:9px;gap:6px;line-height:1.7}
 }
 @media(prefers-reduced-motion:reduce){.fit-socials .fit-social-link,.fit-socials .fit-social-link::after{transition:none!important}.fit-socials .fit-social-link:hover{transform:none}}
+/* Enhanced education and project-card motion */
+@media (prefers-reduced-motion: no-preference) {
+  .fit-learning-card { transition: transform .38s cubic-bezier(.2,.7,.2,1), filter .38s ease; will-change: transform; }
+  .fit-learning-card:hover { transform: translateY(-7px); }
+  .fit-learning-visual { overflow: hidden; }
+  .fit-learning-visual img { transition: transform .65s cubic-bezier(.2,.7,.2,1), filter .45s ease; }
+  .fit-learning-card:hover .fit-learning-visual img { transform: scale(1.055); filter: saturate(1.12); }
+  .fit-learning-visual::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(115deg, transparent 25%, #ffffff26 48%, transparent 68%); transform: translateX(-130%); transition: transform .8s ease; }
+  .fit-learning-visual { position: relative; }
+  .fit-learning-card:hover .fit-learning-visual::after { transform: translateX(130%); }
+  .fit-learning-note { transition: box-shadow .35s ease, transform .35s ease; }
+  .fit-learning-note:hover { transform: translateY(-3px); box-shadow: 0 12px 28px #087cf015; }
+  .fit-project-grid > article { transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease; }
+  .fit-project-grid > article:hover { transform: translateY(-5px); box-shadow: 0 16px 36px #06173512; border-color: #7dc6ff; }
+}
+
+
 </style>
 <footer class="footer"><div class="wrap"><div class="footgrid"><div><a class="brand" href="#home"><img src="logo.jpeg" alt="F.I.T. logo"><span>FUTURE INNOVATION<small>TECHNOLOGIES</small></span></a><p>Inspiring innovation. Building the future. Technology solutions across drones, robotics, digital fabrication and practical education.</p></div><div><h4>Explore</h4><a href="#about">About F.I.T.</a><a href="#drones">Drone Solutions</a><a href="#services">Capabilities</a><a href="#industries">Industries</a></div><div><h4>Education</h4><a href="#education">STEM Lab Setup</a><a href="#education">Robotics & AI</a><a href="#education">Teacher Training</a><a href="#contact">Institution Enquiry</a></div><div><h4>Connect</h4><a href="#contact">Request a Quote</a><a href="#contact">Project Consultation</a><a href="#faq">FAQs & Compliance</a><p>YOUR-EMAIL@example.com<br>+91-XXXXXXXXXX</p><p class="fit-social-title">Follow F.I.T.</p><nav class="fit-socials" aria-label="F.I.T. social media links"><a class="fit-social-link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook"><img src="./Facebook%20Icon.png" alt="" width="25" height="25" loading="lazy" decoding="async"></a><a class="fit-social-link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><img src="./Instagram%20Icon.png" alt="" width="25" height="25" loading="lazy" decoding="async"></a><a class="fit-social-link" href="https://wa.me/" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp"><img src="./WhatsApp%20icon.png" alt="" width="25" height="25" loading="lazy" decoding="async"></a><a class="fit-social-link" href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X" title="X"><img src="./X%20Icon.png" alt="" width="25" height="25" loading="lazy" decoding="async"></a></nav></div></div><div class="footbottom"><span>© <span id="year"></span> Future Innovation Technologies. All rights reserved.</span><span>Discover · Develop · Empower</span></div></div></footer><a class="float btn" href="#contact">Get a Quote ↗</a><script>/* Start the homepage at the top on a fresh load, even if the previous URL contained an old section hash. Internal navigation clicks still work normally. */
 (function(){
@@ -560,22 +577,6 @@ const menu=document.getElementById('menu'),nav=document.getElementById('navlinks
   document.addEventListener('pointerenter', () => document.body.classList.add('fit-cursor-ready'));
 })();
 
-
-/* Enhanced education and project-card motion */
-@media (prefers-reduced-motion: no-preference) {
-  .fit-learning-card { transition: transform .38s cubic-bezier(.2,.7,.2,1), filter .38s ease; will-change: transform; }
-  .fit-learning-card:hover { transform: translateY(-7px); }
-  .fit-learning-visual { overflow: hidden; }
-  .fit-learning-visual img { transition: transform .65s cubic-bezier(.2,.7,.2,1), filter .45s ease; }
-  .fit-learning-card:hover .fit-learning-visual img { transform: scale(1.055); filter: saturate(1.12); }
-  .fit-learning-visual::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(115deg, transparent 25%, #ffffff26 48%, transparent 68%); transform: translateX(-130%); transition: transform .8s ease; }
-  .fit-learning-visual { position: relative; }
-  .fit-learning-card:hover .fit-learning-visual::after { transform: translateX(130%); }
-  .fit-learning-note { transition: box-shadow .35s ease, transform .35s ease; }
-  .fit-learning-note:hover { transform: translateY(-3px); box-shadow: 0 12px 28px #087cf015; }
-  .fit-project-grid > article { transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease; }
-  .fit-project-grid > article:hover { transform: translateY(-5px); box-shadow: 0 16px 36px #06173512; border-color: #7dc6ff; }
-}
 
 /* fit-motion-system: reveal sections as they enter view */
 (function () {
