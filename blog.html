@@ -18,12 +18,30 @@ footer{background:#031027;color:#aabedb;padding:26px 0;font-size:11px}footer .fo
 @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.blog-card{animation:none;transition:none}}
 @media(max-width:1000px){.links{gap:14px}.links a{font-size:12px}.nav-cta{display:none}.brand{font-size:11px}}
 @media(max-width:760px){.navin{padding:12px 0;align-items:flex-start;flex-direction:column;gap:12px}.links{gap:12px 18px}.hero{padding:54px 0 40px}.hero h1{letter-spacing:-1.5px}.blog-grid{grid-template-columns:1fr}.blog-card{padding:22px}.section-head{align-items:flex-start;flex-direction:column}.cta{padding:23px}}
+
+.menu{display:none;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid #3a5579;border-radius:11px;background:#102342;color:#fff;font-size:22px;cursor:pointer}
+@media(max-width:760px){
+ .navin{position:relative;min-height:68px;padding:10px 0;align-items:center;flex-direction:row;gap:10px}
+ .brand{flex:1;min-width:0;font-size:11px}
+ .brand img{width:40px;height:40px;flex:0 0 40px}
+ .menu{display:inline-flex;flex:0 0 44px}
+ .links{display:none;position:absolute;top:100%;left:0;right:0;z-index:25;flex-direction:column;align-items:stretch;gap:0;padding:10px 16px;background:#0b1428;border:1px solid #233b5d;border-radius:0 0 14px 14px;box-shadow:0 18px 28px #06173535;max-height:70vh;overflow:auto}
+ .links.open{display:flex}
+ .links a{display:flex;align-items:center;min-height:44px;font-size:13px}
+ .nav-cta{display:none}
+ .hero h1{font-size:clamp(36px,10vw,54px)}
+ .hero p{font-size:14px}
+ .blog-card h2{font-size:20px}
+ .blog-card summary{min-height:36px;display:flex;align-items:center}
+ .cta .btn{min-height:46px;width:100%}
+}
+
 </style>
 </head>
 <body>
 <header class="nav"><div class="wrap navin">
 <a class="brand" href="./index.html#home"><img src="./logo.jpeg" alt="F.I.T. logo"><span>FUTURE INNOVATION<small>TECHNOLOGIES · F.I.T.</small></span></a>
-<nav class="links" aria-label="Main navigation">
+<button class="menu" id="blog-menu" aria-label="Open navigation menu" aria-expanded="false" aria-controls="blog-nav">☰</button><nav class="links" id="blog-nav" aria-label="Main navigation">
 <a href="./index.html#about">About</a><a href="./index.html#drones">Drone Solutions</a><a href="./index.html#services">Capabilities</a><a href="./index.html#industries">Industries</a><a href="./index.html#education">STEM Education</a><a href="./blog.html" aria-current="page">Blog</a><a href="./index.html#contact">Contact</a>
 </nav><a class="nav-cta" href="./index.html#contact">Discuss a Project ↗</a>
 </div></header>
@@ -90,5 +108,12 @@ footer{background:#031027;color:#aabedb;padding:26px 0;font-size:11px}footer .fo
 <div class="cta"><div><h2>Planning a drone, robotics or STEM project?</h2><p>Talk with F.I.T. about your institution's goals, equipment requirements and next steps.</p></div><a class="btn" href="./index.html#contact">Discuss Your Project ↗</a></div>
 </main>
 <footer><div class="wrap foot"><span>© <span id="year"></span> Future Innovation Technologies (F.I.T.)</span><a href="./index.html#home">Back to main website ↑</a></div></footer>
-<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+const blogMenu=document.getElementById('blog-menu'),blogNav=document.getElementById('blog-nav');
+blogMenu.addEventListener('click',()=>{const open=blogNav.classList.toggle('open');blogMenu.setAttribute('aria-expanded',String(open));});
+blogNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{blogNav.classList.remove('open');blogMenu.setAttribute('aria-expanded','false');}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){blogNav.classList.remove('open');blogMenu.setAttribute('aria-expanded','false');}});
+document.addEventListener('click',e=>{if(!e.target.closest('.navin')){blogNav.classList.remove('open');blogMenu.setAttribute('aria-expanded','false');}});
+</script>
 </body></html>
