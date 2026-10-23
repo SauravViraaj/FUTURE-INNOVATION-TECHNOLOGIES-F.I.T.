@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Technology Blog | Drones, Robotics & STEM Education | F.I.T.</title>
+<meta name="description" content="Explore practical guides from Future Innovation Technologies on drone mapping, robotics for beginners, STEM education, STEM lab planning and engineering prototyping.">
+<meta name="keywords" content="drone mapping, robotics for beginners, STEM education, STEM lab setup, engineering design process, rapid prototyping">
+<meta name="theme-color" content="#061735">
+<link rel="canonical" href="https://sauravviraaj.github.io/FUTURE-INNOVATION-TECHNOLOGIES-F.I.T./blog.html">
+<style>
+:root{--navy:#061735;--blue:#087cf0;--cyan:#29d7ff;--ink:#0b1730;--muted:#61718b;--line:#dce8f7;--pale:#f4f8ff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:#fff}a{color:inherit;text-decoration:none}.wrap{width:min(1160px,90%);margin:0 auto}
+.nav{position:sticky;top:0;z-index:20;background:#0b1428;color:#f1f5f9;box-shadow:0 5px 24px #06173512}.navin{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:28px}.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:13px;letter-spacing:.3px;white-space:nowrap}.brand img{width:43px;height:43px;object-fit:contain;border-radius:10px}.brand small{display:block;font-size:9px;letter-spacing:1.4px;color:#8fa8c8;margin-top:4px}.links{display:flex;align-items:center;gap:25px;flex-wrap:wrap}.links a{font-size:13px;font-weight:750;color:#e4edf9;transition:color .2s}.links a:hover,.links a[aria-current=page]{color:var(--cyan)}.nav-cta{background:linear-gradient(110deg,#087cf0,#20c3e9);padding:12px 16px;border-radius:10px;font-size:12px;font-weight:850;white-space:nowrap}
+.hero{padding:76px 0 58px;background:radial-gradient(ellipse at 85% 5%,#dcefff 0,transparent 34%),linear-gradient(180deg,#f4f8ff,#fff)}.eyebrow{font-size:11px;font-weight:900;letter-spacing:2.4px;color:var(--blue);text-transform:uppercase}.hero h1{max-width:850px;font-size:clamp(38px,6vw,66px);letter-spacing:-2.7px;line-height:1.04;margin:18px 0}.hero h1 span{color:var(--blue)}.hero p{max-width:700px;color:var(--muted);font-size:16px;line-height:1.8;margin:0}.hero-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}.pill{padding:8px 12px;border:1px solid #cfe3fb;background:#fff;border-radius:999px;color:#34516f;font-size:11px;font-weight:750}
+main{padding:42px 0 76px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:25px}.section-head h2{font-size:clamp(25px,3vw,36px);letter-spacing:-1.1px;margin:8px 0}.section-head p{max-width:540px;color:var(--muted);font-size:13px;line-height:1.75;margin:0}.blog-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.blog-card{border:1px solid var(--line);border-radius:20px;background:white;padding:26px;box-shadow:0 8px 26px #06173507;transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease;animation:rise .65s both}.blog-card:nth-child(2){animation-delay:.08s}.blog-card:nth-child(3){animation-delay:.16s}.blog-card:nth-child(4){animation-delay:.24s}.blog-card:nth-child(5){animation-delay:.32s}.blog-card:hover{transform:translateY(-5px);border-color:#91c5ff;box-shadow:0 18px 40px #06173512}.blog-label{display:flex;justify-content:space-between;align-items:center;gap:12px;color:var(--blue);font-size:10px;font-weight:900;letter-spacing:1.5px}.blog-number{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;background:#edf6ff;color:var(--blue);font-size:12px;letter-spacing:0}.blog-card h2{font-size:22px;letter-spacing:-.65px;line-height:1.28;margin:19px 0 12px}.blog-card>p{font-size:13px;line-height:1.85;color:var(--muted);margin:0 0 17px}.keywords{background:#f5f9ff;border-radius:11px;padding:13px 14px;color:#526780;font-size:11px;line-height:1.8}.keywords b{color:#15345b}.blog-card details{margin-top:18px;border-top:1px solid #e7eef8;padding-top:15px}.blog-card summary{list-style:none;cursor:pointer;font-size:12px;color:var(--blue);font-weight:850}.blog-card summary::-webkit-details-marker{display:none}.blog-card summary:after{content:"+";float:right;font-size:18px;line-height:12px}.blog-card details[open] summary:after{content:"−"}.article-body h3{font-size:15px;margin:18px 0 7px}.article-body p,.article-body li{font-size:12px;line-height:1.9;color:var(--muted)}.article-body ul{padding-left:19px}.cta{margin-top:30px;border-radius:18px;padding:26px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;color:white;background:linear-gradient(110deg,#061735,#0b3978)}.cta h2{margin:0 0 6px;font-size:21px}.cta p{margin:0;color:#c3d7f2;font-size:12px;line-height:1.7}.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:10px;background:linear-gradient(110deg,#087cf0,#20c3e9);color:#fff;font-size:12px;font-weight:850;padding:13px 17px;white-space:nowrap}
+footer{background:#031027;color:#aabedb;padding:26px 0;font-size:11px}footer .foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}footer a{color:#d9eaff}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.blog-card{animation:none;transition:none}}
+@media(max-width:1000px){.links{gap:14px}.links a{font-size:12px}.nav-cta{display:none}.brand{font-size:11px}}
+@media(max-width:760px){.navin{padding:12px 0;align-items:flex-start;flex-direction:column;gap:12px}.links{gap:12px 18px}.hero{padding:54px 0 40px}.hero h1{letter-spacing:-1.5px}.blog-grid{grid-template-columns:1fr}.blog-card{padding:22px}.section-head{align-items:flex-start;flex-direction:column}.cta{padding:23px}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap navin">
+<a class="brand" href="./index.html#home"><img src="./logo.jpeg" alt="F.I.T. logo"><span>FUTURE INNOVATION<small>TECHNOLOGIES · F.I.T.</small></span></a>
+<nav class="links" aria-label="Main navigation">
+<a href="./index.html#about">About</a><a href="./index.html#drones">Drone Solutions</a><a href="./index.html#services">Capabilities</a><a href="./index.html#industries">Industries</a><a href="./index.html#education">STEM Education</a><a href="./blog.html" aria-current="page">Blog</a><a href="./index.html#contact">Contact</a>
+</nav><a class="nav-cta" href="./index.html#contact">Discuss a Project ↗</a>
+</div></header>
+<section class="hero"><div class="wrap">
+<div class="eyebrow">F.I.T. Insights & Guides</div>
+<h1>Ideas that move<br><span>innovation forward.</span></h1>
+<p>Practical reads on drone technology, robotics, STEM education, lab planning and engineering. Explore each guide and its focus keywords.</p>
+<div class="hero-meta"><span class="pill">Drone Technology</span><span class="pill">Robotics</span><span class="pill">STEM Education</span><span class="pill">Prototyping</span></div>
+</div></section>
+<main class="wrap">
+<div class="section-head"><div><div class="eyebrow">Latest articles</div><h2>Explore the F.I.T. blog</h2></div><p>Guides designed for schools, educators, organisations and teams exploring practical technology solutions.</p></div>
+<div class="blog-grid">
+<article class="blog-card" id="drone-mapping">
+<div class="blog-label"><span>DRONES & MAPPING</span><span class="blog-number">01</span></div>
+<h2>How Drone Mapping Helps Capture Better Aerial Data</h2>
+<p>Drone mapping can help teams collect aerial imagery for land surveys, site planning, inspections and project documentation. A useful workflow begins with a clear objective, suitable equipment, safe flight planning and appropriate data processing. Accuracy depends on the drone, sensors, ground control, environment and processing method.</p>
+<div class="keywords"><b>Focus keywords:</b> drone mapping, aerial survey, drone surveying, aerial data collection, drone technology</div>
+<details><summary>Read full article</summary><div class="article-body">
+<h3>Start with the job to be done</h3><p>Before selecting a mapping solution, define the area to cover, the level of detail needed and how the final data will be used. Different tasks may require different sensors, flight plans and processing workflows.</p>
+<h3>Plan the flight and data workflow</h3><p>Consider local flight rules, site access, weather, battery planning, permissions and data privacy. For repeat surveys, consistent flight plans and documented processes make comparisons easier. Image overlap, ground control and processing choices can affect the quality of the final output.</p>
+<h3>Choose equipment around the application</h3><p>Evaluate the platform, sensor, software and operator capabilities together rather than choosing a drone based on specifications alone. Requirements should be reviewed for each site and use case.</p>
+</div></details></article>
+<article class="blog-card" id="robotics-beginners">
+<div class="blog-label"><span>ROBOTICS & AUTOMATION</span><span class="blog-number">02</span></div>
+<h2>Robotics for Beginners: From First Circuit to Working Robot</h2>
+<p>Learning robotics combines mechanical design, electronics, coding and problem-solving. Beginners can start with a simple wheeled robot, a motor driver and basic sensors before moving to more complex autonomous projects. Building in small stages helps learners understand how hardware and software work together.</p>
+<div class="keywords"><b>Focus keywords:</b> robotics for beginners, educational robotics, robotics kits, robot programming, STEM robotics</div>
+<details><summary>Read full article</summary><div class="article-body">
+<h3>Build the basics first</h3><p>A practical learning path is to assemble the chassis, test each motor, connect a sensor and write a short program to control movement. Test one component at a time before combining everything.</p>
+<h3>Learn through testing</h3><p>Encourage learners to record what happens, troubleshoot one issue at a time and improve the design through repeated tests. This develops logical thinking and makes debugging part of the learning process.</p>
+<h3>Keep the lab safe and suitable</h3><p>Provide age-appropriate tools, clear safety guidance and supervision. Schools and training centres can plan robotics activities around curriculum goals, learner experience and available lab facilities.</p>
+</div></details></article>
+<article class="blog-card" id="stem-learning">
+<div class="blog-label"><span>STEM EDUCATION</span><span class="blog-number">03</span></div>
+<h2>Why Hands-On STEM Learning Matters in Schools</h2>
+<p>Hands-on STEM education connects classroom concepts with practical experiments. When learners build, test and explain a project, they can explore science, technology, engineering and mathematics through a shared challenge rather than studying each idea in isolation.</p>
+<div class="keywords"><b>Focus keywords:</b> STEM education, hands-on STEM learning, STEM lab for schools, STEM activities, experiential learning</div>
+<details><summary>Read full article</summary><div class="article-body">
+<h3>Connect concepts to real projects</h3><p>Activities may include simple circuits, coding exercises, robotics challenges, model bridges, sensor experiments and data collection. The best activity is one that clearly supports a learning outcome and is suitable for the students taking part.</p>
+<h3>Make reflection part of the lesson</h3><p>Allow learners to plan, test, explain results and improve their work. Teachers can assess not only the final result but also collaboration, problem-solving and how students explain their decisions.</p>
+<h3>Design the lab around learners</h3><p>A useful STEM lab reflects learner age, curriculum, room layout, educator training, safety and maintenance needs. Equipment should support planned activities, not simply fill the room.</p>
+</div></details></article>
+<article class="blog-card" id="stem-lab-planning">
+<div class="blog-label"><span>LAB PLANNING</span><span class="blog-number">04</span></div>
+<h2>Planning a STEM Lab: Equipment, Space and Teacher Training</h2>
+<p>A successful STEM lab is more than a room filled with equipment. It needs a clear learning plan, suitable workstations, safe storage, reliable power and connectivity where required, and a realistic approach to teacher training and ongoing support.</p>
+<div class="keywords"><b>Focus keywords:</b> STEM lab setup, school robotics lab, STEM lab equipment, Atal Tinkering Lab setup, teacher training</div>
+<details><summary>Read full article</summary><div class="article-body">
+<h3>Define the learning requirements</h3><p>Review age groups, subjects, class sizes and projects the lab should support. Map the available room, accessibility, supervision, safety requirements, storage and equipment servicing needs.</p>
+<h3>Select equipment with purpose</h3><p>Choose equipment based on curriculum use, durability, ease of maintenance and educator familiarity instead of appearance alone. Plan how consumables and replacement parts will be managed.</p>
+<h3>Include installation and training</h3><p>Account for setup, educator orientation, documentation and future upgrades. A realistic plan should be tailored to the institution's approved budget, facilities and learning objectives.</p>
+</div></details></article>
+<article class="blog-card" id="engineering-prototype">
+<div class="blog-label"><span>INNOVATION & PROTOTYPING</span><span class="blog-number">05</span></div>
+<h2>From Idea to Prototype: A Simple Engineering Design Process</h2>
+<p>Prototyping turns an idea into something that can be tested. A structured process helps teams define the problem, sketch possible solutions, select materials, build an early model and use feedback to improve the result.</p>
+<div class="keywords"><b>Focus keywords:</b> engineering design process, rapid prototyping, product development, innovation lab, digital fabrication</div>
+<details><summary>Read full article</summary><div class="article-body">
+<h3>Define the problem and constraints</h3><p>Describe the user need and constraints such as cost, size, safety, materials and time. Compare several concepts before selecting one to build.</p>
+<h3>Build and test a first version</h3><p>Test the prototype against clear criteria and document what worked, what failed and what should change. Depending on the project, prototyping may involve electronics, CAD, 3D printing, robotics or simple craft materials.</p>
+<h3>Improve through feedback</h3><p>Use test results to refine the design before investing in a more complete version. Repeating this cycle helps teams learn efficiently and identify problems early.</p>
+</div></details></article>
+</div>
+<div class="cta"><div><h2>Planning a drone, robotics or STEM project?</h2><p>Talk with F.I.T. about your institution's goals, equipment requirements and next steps.</p></div><a class="btn" href="./index.html#contact">Discuss Your Project ↗</a></div>
+</main>
+<footer><div class="wrap foot"><span>© <span id="year"></span> Future Innovation Technologies (F.I.T.)</span><a href="./index.html#home">Back to main website ↑</a></div></footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body></html>
